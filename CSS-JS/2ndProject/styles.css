@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+:root {
+    font-family:'Roboto Condensed',Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    --mainBG: #E0CE90;
+    --seconBG: #84E19B;
+    --thirdBG: #6E7DEB;
+    --mainTxt: #E15B58;
+    --seconTxt: #2E2E33;
+}
+
+#firstColor {
+    background-color: var(--mainBG);
+    color: var(--mainTxt);
+    text-align: center;
+    justify-content: space-around;
+    height: 100lvh;
+}
+
+#secondColor {
+    background-color: var(--seconBG);
+    color: var(--seconTxt);
+}
+
+#thirdColor {
+    background-color: var(--thirdBG);
+    color: var(--seconTxt);
+}
+
+body {
+    margin: 0 auto;
+}
+
+nav.navMain {
+    position: relative;
+}
+
+#stickTop {
+    position: sticky;
+    top: 0;
+    border: 1px solid red;
+}
+
+header > .navMain > ul,
+footer > .navMain > ul {
+    display: flex;
+    gap: 5ch;
+    list-style: none;
+}
+
+header > .navMain > ul > li,
+footer > .navMain > ul > li {
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 90svw;
+    margin: 0 5svw;
+}
+
+.bloque>.mainTit {
+    font-size: 4rem;
+}
+
+.testimonyBlok {
+    display: inline;
+}
+.testimonyBlok > h1 {
+    justify-content: left;
+    font-size: 2rem;
+}
+
+.testimonyBlok > p {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.bloque > .bloTit {
+    font-size: 3rem;
+    padding-top: 5svw;
+}
+
+.bloque {
+    margin: 0 auto;
+    padding: 5svw 10svw;
+    display: flex;
+    flex-direction: column;
+    gap: 5svw;
+}
+
+.bloque > * {
+    flex: 1;
+}
+
+.bloFot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5ch;
+}
+
+.bloFot > .img1 {
+    width: 100%;
+}
+.bloFot > .img2 {
+    width: 100%;
+    grid-column-start: 2;
+}
+
+@media screen and (max-width: 960px) {
+    header > .navMain {
+        width: 100vw;
+        padding: 5ch 0 0 5ch;
+    }
+    .main {
+        width: 0;
+        margin: 0;
+    }
+    .bloque {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5svw;
+    }
+    .bloque>.mainTit {
+        font-size: 2.5rem;
+    }
+    .bloque > .bloTit {
+        font-size: 2rem;
+    }
+    footer > .navMain {
+        display: none;
+    }
+    .bloFot {
+        column-gap: 1ch;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .bloque>.mainTit {
+        font-size: 2rem;
+    }
+    .bloque > .bloTit {
+        font-size: 1.5rem;
+    }
+        .testimonyBlok > h1 {
+        font-size: 1.5rem;
+    }
+    header > .navMain > ul > li {
+        font-size: 1rem;
+    }
+}
