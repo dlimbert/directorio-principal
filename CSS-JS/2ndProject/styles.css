@@ -151,9 +151,11 @@ p {
 
 .bloFot > .img1 {
     width: 100%;
+    max-width: 600px;
 }
 .bloFot > .img2 {
     width: 100%;
+    max-width: 1200px;
     grid-column-start: 2;
 }
 
