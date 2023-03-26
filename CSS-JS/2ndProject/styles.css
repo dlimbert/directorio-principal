@@ -3,51 +3,68 @@
     font-family:'Roboto Condensed',Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    --mainBG: #E0CE90;
-    --secondBG: #84E19B;
-    --thirdBG: #6E7DEB;
-    --mainTxt: #E15B58;
-    --secondTxt: #2E2E33;
-    --thirdTxt: ;
+    --mainBG: #151F30;
+    --secondBG: #103778;
+    --thirdBG: #0596A2;
+    --mainTxt: #FF7A48;
+    --secondTxt: #E3371E;
+    --thirdTxt: #2E2E33;
     --indexHidden: -1;
     --indexShow: 1;
 }
 
 main {
-    max-width: 90svw;
-    margin: 1svh 5svw;
-    box-shadow: .5svh .5svh 2svw var(--secondTxt);
+    max-width: 1280px;
+    min-width: 600px;
+    width: 90vw;
+    margin-inline: auto;
+    box-shadow: .5vh .5vh 2vw var(--secondTxt);
     position: relative;
 }
 
-#firstColor {
+@media screen and (max-width: 1024px) {
+    main {
+        width: 95vw;
+        height: 90vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+    @media screen and (max-width: 640px) {
+    main {
+        flex-wrap: no-wrap;
+    }
+}
+
+.firstColor {
     background-color: var(--mainBG);
+    color: var(--mainTxt);
 }
 
 .secondColor {
     background-color: var(--secondBG);
+    color: var(--secondTxt);
 }
 
 .thirdColor {
     background-color: var(--thirdBG);
+    color: var(--mainTxt)
 }
 
 h1 {
     font-size: 4rem;
-    color: var(--mainTxt);
 }
 
 h2 {
     font-size: 3rem;
-    color: var(--secondTxt);
 }
 
 h3 {
     font-size: 2rem;
-    color: var(--mainTxt);
 }
 
 h1+h2+h3 {
+
     padding: 0 10ch;
 }
 
@@ -115,10 +132,47 @@ p {
 }
 
 .bloque {
-    height: 95svh;
     display: flex;
+    height: 95svh;
+    gap: 2ch;
+    padding: 0 5ch;
+}
+
+#slide0, #slide2 {
     justify-content: center;
     align-items: center;
+}
+
+#slide1, #slide3 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide4 {
+    justify-content: center;
+    align-items: center;
+}
+
+.textBloc {
+    text-align: center;
+}
+
+.picBloc {
+    gap: 5ch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    flex: 1;
+    height: auto;
+}
+
+.img3 {
+    max-height: 80vh;
 }
 
 #slide1, #slide2, #slide3, #slide4 {
@@ -128,77 +182,88 @@ p {
     z-index: var(--indexHidden);
 }
 
-.bloque > * {
-    flex: 1;
-    text-align: center;
-    justify-content: center;
-}
-
-.subSelector {
-    color: var(--secondTxt);
-}
-
-.bloTit {
-    padding-top: 5svw;
-}
-
-.bloFot {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2ch;
-    padding: 0 5ch;
-}
-
-.bloFot > .img1 {
-    width: 100%;
-    max-width: 600px;
-}
-.bloFot > .img2 {
-    width: 100%;
-    max-width: 1200px;
-    grid-column-start: 2;
-}
-
-#sC1:hover {
-    border: 3px solid red;
-}
-
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
     header > .navMain {
         width: 100vw;
         padding: 5ch 0 0 5ch;
     }
-    .main {
-        width: 0;
-        margin: 0;
-    }
     .bloque {
-        margin: 0 auto;
+        height: auto;
+        flex: 1;
         display: flex;
-        flex-direction: column;
     }
-    .bloque>.mainTit {
+    .bloque>* {
+        flex: 1;
+    }
+    #slide0 {
+        flex: 100%;
+    }
+    #slide1 {
+        flex: 1 100%;
+        order: 1;
+    }
+    #slide2 {
+        flex: 2;
+        order: 2;
+    }
+    #slide3 {
+        flex: 1 100%;
+        order: 4;
+    }
+    #slide4 {
+        flex: 1;
+        order: 3;
+    }
+    #slide1, #slide2, #slide3, #slide4 {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: var(--indexHidden);
+    }
+    h1 {
         font-size: 2.5rem;
     }
-    .bloque > .bloTit {
-        font-size: 2rem;
+    h2, h3 {
+        font-size: 1.5rem;
     }
-    footer > .navMain {
+    .picBloc {
+        gap: 2ch;
+    }
+    footer > .navMain, .pageNav {
         display: none;
     }
 }
 
-@media screen and (max-width: 620px) {
-    .bloque>.mainTit {
-        font-size: 2rem;
+@media screen and (max-width: 640px) {
+    #slide0 {
+        flex: 100%;
     }
-    .bloque > .bloTit {
+    #slide1 {
+        flex: 1 100%;
+        order: 1;
+    }
+    #slide2 {
+        flex: 2;
+        order: 2;
+    }
+    #slide3 {
+        flex: 1 100%;
+        order: 4;
+    }
+    #slide4 {
+        flex: 1;
+        order: 3;
+    }
+        h1 {
         font-size: 1.5rem;
     }
-        .testimonyBlok > h1 {
-        font-size: 1.5rem;
-    }
-    header > .navMain > ul > li {
+    h2, h3 {
         font-size: 1rem;
+    }
+    .picBloc {
+        gap: 1ch;
+    }
+    .img3 {
+        display: none;
     }
 }
