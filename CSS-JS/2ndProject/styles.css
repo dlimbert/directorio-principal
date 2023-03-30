@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 :root {
-    font-family:'Roboto Condensed',Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
     --mainBG: #151F30;
+    --mainFG: red;
     --secondBG: #103778;
     --thirdBG: #0596A2;
     --mainTxt: #FF7A48;
@@ -13,7 +11,18 @@
     --indexShow: 1;
 }
 
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family:'Roboto Condensed',Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 main {
+    box-sizing: border-box;
     max-width: 1280px;
     min-width: 600px;
     width: 90vw;
@@ -30,7 +39,7 @@ main {
         flex-wrap: wrap;
     }
 }
-    @media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) {
     main {
         flex-wrap: no-wrap;
     }
@@ -63,20 +72,15 @@ h3 {
     font-size: 2rem;
 }
 
-h1+h2+h3 {
-
-    padding: 0 10ch;
-}
-
 p {
     font-size: 1rem;
-    padding: 0 5ch;
-    color: var(--secondTxt);
 }
 
-.testimonyBlok>p {
-    font-size: 0.8rem;
-    text-align: right;
+#bigBot {
+    text-align: center;
+    border-radius: 25px;
+    padding: 2em;
+    background-color: var(--mainFG);
 }
 
 #navLink {
@@ -134,24 +138,33 @@ p {
 .bloque {
     display: flex;
     height: 95svh;
-    gap: 2ch;
-    padding: 0 5ch;
-}
-
-#slide0, #slide2 {
+    padding: 0 5em;
     justify-content: center;
     align-items: center;
 }
 
 #slide1, #slide3 {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
-#slide4 {
-    justify-content: center;
-    align-items: center;
+#slide2 {
+    flex-direction: column;
+}
+.testimonyTxt::before {
+    content: open-quote;
+}
+
+.testimonyTxt::after {
+    content: close-quote;
+}
+.testimonyTxt {
+    align-self: stretch;
+    text-align: center;
+}
+
+.testimonyAuthor {
+    font-size: 0.8rem;
+    align-self: flex-end;
 }
 
 .textBloc {
@@ -159,29 +172,34 @@ p {
 }
 
 .picBloc {
-    gap: 5ch;
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
+    margin-inline: auto;
+    gap: 2em;
+    max-width: 1120px;
 }
 
 img {
-    max-width: 100%;
-    flex: 1;
+    width: 33%;
     height: auto;
+    flex: 1;
 }
 
 .img3 {
-    max-height: 80vh;
+    width: 100%;
+    height: auto;
+    padding-right: 2em;
 }
 
+/*
 #slide1, #slide2, #slide3, #slide4 {
     position: absolute;
     top: 0;
     left: 0;
     z-index: var(--indexHidden);
 }
-
+*/
 @media screen and (max-width: 1024px) {
     header > .navMain {
         width: 100vw;
@@ -192,9 +210,7 @@ img {
         flex: 1;
         display: flex;
     }
-    .bloque>* {
-        flex: 1;
-    }
+
     #slide0 {
         flex: 100%;
     }
@@ -226,8 +242,8 @@ img {
     h2, h3 {
         font-size: 1.5rem;
     }
-    .picBloc {
-        gap: 2ch;
+    .img3 {
+        display: none;
     }
     footer > .navMain, .pageNav {
         display: none;
@@ -254,16 +270,10 @@ img {
         flex: 1;
         order: 3;
     }
-        h1 {
+    h1 {
         font-size: 1.5rem;
     }
     h2, h3 {
         font-size: 1rem;
-    }
-    .picBloc {
-        gap: 1ch;
-    }
-    .img3 {
-        display: none;
     }
 }
