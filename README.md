@@ -5,3 +5,4 @@
 3/22/2023 Buscar mejor projecto para el primer puesto del galeria
 3/23-24/2023 actualizacion de projectos
 3/25/2023 actualizado el projecto 2. ya se termino la fase html y css.
+4/7/2023 no habia olvidado tanto el journal
