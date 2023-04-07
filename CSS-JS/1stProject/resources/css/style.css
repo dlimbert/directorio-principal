@@ -1,13 +1,13 @@
-/* Universal Styles */
-
-* {
+:root {
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
+    --bgColor: #4a4a4a;
 }
 
 .main-content {
     max-width: 1440px;
-    margin: 0 auto;
+    min-width: 980px;
+    margin-inline: auto;
     padding-bottom: 50px;
 }
 
@@ -17,12 +17,13 @@
 
 .button {
     border-radius: 4px;
-    background-color: #4a4a4a;
+    background-color: var(--bgColor);
     color: white;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 980px) {
     .main-content {
+        border: 3px solid lime;
         top: 2.5625rem;
     }
 }
@@ -32,7 +33,7 @@
 header {
     position: fixed;
     width: 100%;
-    height: 85px;
+    height: 10vh;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
     z-index: 1;
@@ -71,32 +72,32 @@ header .icon {
     padding-left: 0.75rem;
 }
 
-header .mobile {
+header .small {
     display: none;
 }
 
-@media only screen and (max-width: 760px) {
-    header .desktop {
+@media only screen and (max-width: 960px) {
+    header .wide {
         display: none;
     }
 
-    header .mobile {
-        display: block;
+    header .small {
+        display: inline-block;
         width: 100%;
     }
 
-    header .mobile ul {
+    header .small ul {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100%;
     }
 
-    header .mobile li {
+    header .small li {
         padding: 0;
     }
 
-    header .mobile .button {
+    header .small .button {
         padding: 0.1875rem 0.5rem;
         background-color: #9dc20b;
         line-height: 1.6;
@@ -284,43 +285,18 @@ header .mobile {
 .images-container {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     gap: 30px;
     padding: 30px;
 }
 
-.images-container > img.imgFilter {
+img.imgFilter {
     flex: 1;
-    width: 20%;
+    width: 100%;
 }
 
-@media only screen and (max-width: 760px) {
-    #filters-section {
-        padding: 1.5rem 0 0 0;
-    }
-
-    #filters-section .content {
-        margin-bottom: 1rem;
-    }
-
-    #filters-section .content h2 {
-        padding-bottom: 0.625rem;
-        font-size: 1.125rem;
-        line-height: 1.3;
-        font-weight: normal;
-    }
-
-    #filters-section .content h3 {
-        font-size: 0.875rem;
-        line-height: 1.4;
-    }
-
-    #filters-section .images-container {
-        padding: 0;
-    }
-
-    #filters-section .extra {
-        display: none;
+@media only screen and (max-width: 980px) {
+    .image-container {
+        flex-wrap: wrap;
     }
 }
 

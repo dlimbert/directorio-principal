@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 :root {
+    font-size: inherit;
     --mainBG: #151F30;
     --mainFG: red;
     --secondBG: #103778;
@@ -192,14 +193,14 @@ img {
     padding-right: 2em;
 }
 
-/*
+
 #slide1, #slide2, #slide3, #slide4 {
     position: absolute;
     top: 0;
     left: 0;
     z-index: var(--indexHidden);
 }
-*/
+
 @media screen and (max-width: 1024px) {
     header > .navMain {
         width: 100vw;
