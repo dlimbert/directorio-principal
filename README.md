@@ -7,3 +7,4 @@
 3/25/2023 actualizado el projecto 2. ya se termino la fase html y css.
 4/7/2023 no habia olvidado tanto el journal
 4/7/2023 olvide el log en los uktimos dias. no entiendo el envirmonet d desarrollo
+4/9/2023 el git y el wsl quedaron en la ultima face de teminacion completada
