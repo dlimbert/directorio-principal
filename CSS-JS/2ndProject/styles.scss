@@ -1,0 +1,168 @@
+// variables
+$nav-buton-border: 1px solid #2e2e33;
+$nav-buton-color: gray;
+$nav-buton-color-hover: orange;
+$mainBG: red;
+$secondBG: #103778;
+$thirdBG: #0596A2;
+$mainTxt: #ff7a48;
+$secondTxt: #e3371e;
+$thirdTxt: #2e2e33;
+$border-shadow: .5vh .5vh 2vw $secondTxt;
+$slide-index-active: 1;
+$slide-index-hidden: 0;
+// Globals
+:root {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+//styling
+body {
+    font-family: 'Roboto Condensed';
+    font-size: 1rem;
+    font-weight: 400;
+    header {
+        nav {
+            position: absolute;
+            z-index: 2;
+            top: 5vh;
+            left: 20vw;
+            ul {
+                display: flex;
+                gap: 5ch;
+                padding-left: 5ch;
+                list-style: none;
+                li {
+                    a {
+                        text-decoration: none;
+                        border: $nav-buton-border;
+                        padding: 1ch;
+                        background-color: $nav-buton-color;
+                    }
+                    :hover {
+                        color: $mainTxt;
+                        background-color: $nav-buton-color-hover;
+                    }
+                    :active {
+                        text-decoration: none;
+                        color: $mainTxt;
+                        background-color: $thirdBG;
+                    }
+                    :visited {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        nav {
+            position: absolute;
+            z-index: 2;
+            bottom: 5vh;
+            left: 50vw;
+            ul {
+                list-style: none;
+                li {
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        max-width: 1280px;
+        min-width: 600px;
+        width: 90vw;
+        margin-inline: auto;
+        position: relative;
+        section {
+            display: flex;
+            height: 95svh;
+            padding: 0 5em;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            h1 {
+                font-size: 4rem;
+                text-align: center;
+                border-radius: 25px;
+                padding: 2em;
+                background-color: $mainBG;
+            }
+            div.testimony {
+                display: flex;
+                flex-direction: column;
+                h3 {
+                    font-size: 2rem;
+                    align-self: stretch;
+                    text-align: center;
+                }
+                h3::before {
+                    content: open-quote;
+                }
+                h3::after {
+                    content: close-quote;
+                }
+                p {
+                    font-size: 0.8rem;
+                    align-self: flex-end;
+                }
+            }
+            div.textBloc {
+                text-align: center;
+                h2{
+                    font-size: 3rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            figure {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin-inline: auto;
+                gap: 2em;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+/*utilities*/
+.firstColor {
+    background-color: $mainBG;
+    color: $mainTxt
+}
+.secondColor {
+    background-color: $secondBG;
+    color: $secondTxt
+}
+.thirdColor {
+    background-color: $thirdBG;
+    color: $thirdTxt
+}
+.imageWrap {
+    flex-wrap: wrap; 
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $slide-index-hidden;
+    box-shadow: $border-shadow;
+    border-radius: 25px;
+}
+.slide0 {
+    z-index: $slide-index-active;
+}
