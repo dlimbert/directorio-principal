@@ -1,5 +1,6 @@
 $border-line: solid 1px #c6c1c1;
 $brdr-ln-singup: solid 1px #979797;
+$bg-img: url('../images/banner-landingpage.jpg');
 
 $mn-bg-clr: #4a4a4a;
 
@@ -13,6 +14,9 @@ $mn-bg-clr: #4a4a4a;
     font-weight: inherit;
     line-height: inherit;
     -webkit-font-smoothing: antialiased;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
 }
 /*typography utilities */
 .roboto-font {
@@ -40,7 +44,7 @@ body {
         border-bottom: $border-line;
         background-color: white;
         z-index: 1;
-        .content {
+        div.content {
             display: flex;
             align-items: center;
             padding: 1.875rem;
@@ -80,10 +84,9 @@ body {
         }
         section.banner {
             width: 100%;
-            background-image: url(/resources/images/banner-landingpage.jpg);
-            margin-top: 0;
+            background-image: $bg-img;
+            margin-top: auto;
             display: block;
-            margin: 10px 0;
             text-align: center;
             div.sign-up {
                 display: flex;
@@ -103,12 +106,10 @@ body {
                 color: white;
                 h2 {
                     font-size: 3.125rem;
-                    font-family: "Rubik", sans-serif;
                     padding-bottom: 0.75rem;
                 }
                 h3 {
                     font-size: 2.25rem;
-                    font-family: "Damion", cursive;
                 }
                 p {
                     strong {

@@ -10,6 +10,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 /*typography utilities */
 .roboto-font {
   font-family: "Roboto", sans-serif;
@@ -39,7 +43,7 @@ body header {
   background-color: white;
   z-index: 1;
 }
-body header .content {
+body header div.content {
   display: flex;
   align-items: center;
   padding: 1.875rem;
@@ -47,7 +51,7 @@ body header .content {
   font-size: 1.5rem;
   font-family: "Roboto-Mono-Regular", monospace;
 }
-body header .content a {
+body header div.content a {
   vertical-align: bottom;
   line-height: 1.6;
   font-size: 1rem;
@@ -79,10 +83,9 @@ body main * {
 }
 body main section.banner {
   width: 100%;
-  background-image: url(/resources/images/banner-landingpage.jpg);
-  margin-top: 0;
+  background-image: url("../images/banner-landingpage.jpg");
+  margin-top: auto;
   display: block;
-  margin: 10px 0;
   text-align: center;
 }
 body main section.banner div.sign-up {
@@ -104,12 +107,10 @@ body main section.banner div.sign-up {
 }
 body main section.banner div.sign-up h2 {
   font-size: 3.125rem;
-  font-family: "Rubik", sans-serif;
   padding-bottom: 0.75rem;
 }
 body main section.banner div.sign-up h3 {
   font-size: 2.25rem;
-  font-family: "Damion", cursive;
 }
 body main section.banner div.sign-up p strong {
   font-weight: bold;
