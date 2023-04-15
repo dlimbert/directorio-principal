@@ -6,3 +6,9 @@ CSS-JS
 
 C#
     WIP
+
+color-tool 
+    herramienta para escoger letras y colores en ls letras
+
+html5-boliler y skeleton
+    templates para empesar y agilizar el trabajo
