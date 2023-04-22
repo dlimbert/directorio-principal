@@ -10,3 +10,4 @@
 4/9/2023 el git y el wsl quedaron en la ultima face de teminacion completada
 4/9/2023 actualización en linux del directorio
 4/13/2023 actualizacion del projecto 2. se le completo el scss.
+actualizasion remota 4/19
